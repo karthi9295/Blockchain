@@ -1,0 +1,45 @@
+html{
+    overflow-y:scroll;
+}
+
+body{
+    margin-bottom:0;
+}
+
+#loginPage .headerRt a, #loginPage .floatLt, .activeClass, #homeScreen .homeClass, #loginPage .abtRico{
+    display:none;
+}
+
+.headerRt .logout{
+    background: url(./assets/Images/close.png);
+    color:#fff;
+    text-decoration: none;
+    /*margin-left: 81%;*/
+    display:block;
+    background-size: 100% 100%;
+    width: 34%;
+    cursor:pointer;
+    padding: 0px 0 0 34%;
+}
+.abtRico{
+    display: block;
+}
+.pageCtrl{
+    margin: 0 auto;
+    width:28%;
+}
+.floatLt{
+    display: block;
+}
+
+.activeClass{
+    display:none;
+}
+
+.floatLeft{
+    float:left;
+}
+
+.floatRight{
+    float: right;
+}

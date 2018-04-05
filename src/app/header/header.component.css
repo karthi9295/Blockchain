@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.headerstip
+{
+background: #DC143C;
+height:72px;
+padding-left:1%;
+}
+
+.headerstip img
+{
+height:70px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+}
+
+.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+element.style {
+    padding: 10px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}
+.pull-right {
+    float: right!important;
+}
+
+.headerRt{
+    padding:2px 2% 0 0; 
+    color: #fff; 
+}
+.headerRt p{margin-bottom:12px;font-size: 20px; font-weight: bold;text-align: right;}
+
+.homeClass{
+    float:right;
+    width:13%;
+}
+.homeClass a{
+    text-align: left;
+    text-decoration: none;
+    color:#fff;
+    cursor:pointer;
+    padding-left: 37%;
+}
+/* .headerRt .abtRico{
+    float: right;
+    width:20.5%;
+    line-height: 13px;
+    text-align: center;
+    margin:4px 0 0;
+} */
+.headerRt .abtRico a{
+    font-size: 13px;font-weight: normal;color:#fff;text-decoration: none;
+}
+
+.floatLt{
+    padding-left: 0;
+    padding-top: 44px;
+   
+}
+.floatLt p{
+    margin-bottom:0;   
+    color:#fff;
+    font-weight:bold; 
+}
+.clear{
+    clear:both;
+}

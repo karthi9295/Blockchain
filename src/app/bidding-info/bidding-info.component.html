@@ -1,0 +1,181 @@
+<app-header></app-header>
+
+<div class="clear"></div>
+<div class="fullList">
+    <div class="commit-tease">
+        <span>Bid Selection</span>
+        <span class="pull-right">
+<!--        <input _ngcontent-c0="" class="btn-primary" data-target="#mdlCreateCase" data-toggle="modal" type="button" value="Create"> -->
+        </span>
+    <div _ngcontent-c0="" class="commit-tease-contributors">
+        <div class="container bidd">
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="control-label" for="txtname">Event ID </label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" disabled [(ngModel)]="Biddinginfo.eventID" type="text">
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label" for="txtname">ItemCode</label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" disabled [(ngModel)]="Biddinginfo.itemCode" type="text">
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label" for="txtname">Customer Name </label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" disabled [(ngModel)]="Biddinginfo.customerName" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="control-label" for="txtname">Quantity</label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" disabled [(ngModel)]="Biddinginfo.quantity" type="text">
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label" for="txtname">Po Number </label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" disabled [(ngModel)]="Biddinginfo.pONumber" type="text">
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label" for="txtname">Amount</label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" disabled [(ngModel)]="Biddinginfo.amount" type="text">
+                </div>
+            </div>
+            <div class="row" [ngClass]="{'nghide':(userdetails.role =='Customer')}">
+                <div class="col-md-2">
+                    <label class="control-label">Rate of Interest</label>
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" *ngIf="userdetails.userName == 'bank1'" [(ngModel)]="Biddinginfo.lessor1ROI" type="text" />
+                    <input class="form-control" *ngIf="userdetails.userName == 'bank2'" [(ngModel)]="Biddinginfo.lessor2ROI" type="text" />
+                    <!-- <input class="form-control" disabled *ngIf="userdetails.role =='Customer'" type="text" /> -->
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label">Attachment</label>
+                </div>
+                <div class="col-md-2">
+                    <!-- <input id="" name="" type="file"  (change)="onFileChange($event)" #fileInput /> -->
+                    <input type="file" #fileInput  name="myFile" (change)="onFileChange($event)" /> 
+                </div>
+            </div>
+            <div class="row saveBnk" [ngClass]="{'nghide':(userdetails.role =='Customer')}">
+                <button class="btn btn-primary btn-lg" (click)="saveBankDetails()" [disabled]="userdetails.role =='Customer'" data-dismiss="modal" type="button" value="Yes">Submit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="Container marqDiv">
+<div class="row" *ngIf="(userdetails.role =='Customer' && (Biddinginfo.lessor1 == '' || Biddinginfo.lessor2 ==''))">
+    <marquee>Note: Wait for more banks to bid on this particular PO {{Biddinginfo.pONumber}}</marquee>
+</div>
+</div>
+<div class="fullList">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Financial_Inst</th>
+                <th>Rate-of_Int</th>
+                <th>Attachments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="Biddinginfo1.lessor1=='BS'">
+                <td>
+                    <input type="radio" name="radiogroup" [disabled]="userdetails.role =='Bank'" value="" (click)="selectedRad(1)">
+                </td>
+                <td>Bank Of America</td>
+                <td>{{Biddinginfo1.lessor1ROI}}</td>
+                <td><a href="/getDocument?eventId={{Biddinginfo1.eventID}}&file={{Biddinginfo1.lessor1FileName}}" download>{{Biddinginfo1.lessor1FileName}}</a> </td>
+            </tr>
+            <tr *ngIf="Biddinginfo1.lessor2=='BS'">
+                <td>
+                    <input type="radio" name="radiogroup" [disabled]="userdetails.role =='Bank'" value="" (click)="selectedRad(2)">
+               </td>
+                <td>JP Morgan</td>
+                <td>{{Biddinginfo1.lessor2ROI}}</td>
+                <td><a href="/getDocument?eventId={{Biddinginfo1.eventID}}&file={{Biddinginfo1.lessor2FileName}}" download>{{Biddinginfo1.lessor2FileName}}</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="col-md-12 contractDiv">
+        <input class="btn btn-primary btn-lg" [disabled]="userdetails.role =='Bank'" (click) = "contract()" type="button" value="Accept">
+    </div>
+<div class="modal fade" id="ROIPopoup" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Please provide Rate of Interest and Attachment</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="selectanyPO" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Please select  anyone of the PO</p>
+            </div>
+         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="alreadySubmitted" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Auction is already Completed.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="finalPopup" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+                <h4 class="modal-title">Bidding Acceptance Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <p>PO {{Biddinginfo.pONumber}} has been selected for contract through lease bidding, hereaffter standard lease will take the process.</p>
+                <p *ngIf="selectrowindex == '1'">Do you want to send special notification to Bank Of America?</p>
+                <p *ngIf="selectrowindex == '2'">Do you want to send special notification to JP Morgan?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#openTxtBox" type="button" value="Yes">Submit With Notification</button>
+                <button class="btn btn-primary btn-sm diffWidth" (click)="submitWithout()" data-dismiss="modal" type="button" value="No">Submit Without Notification</button>
+            </div>
+
+            <div id="openTxtBox" class="collapse">
+                <div class="modal-body">
+                    <div><textarea rows="5" cols="30" class="" [(ngModel)] = "model.extraNote"></textarea></div>
+                    <button class="btn btn-primary btn-sm" (click)="submitWithout()" data-dismiss="modal" type="button" value="Submit">Submit</button>
+                </div>
+                <div class="clear"></div>
+            </div>    
+        </div>
+    </div>
+</div>
+</div>
+
+<app-footer></app-footer>

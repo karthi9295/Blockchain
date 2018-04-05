@@ -1,0 +1,253 @@
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid green;
+  color:green;
+  font-size:90%;
+  text-align:right;
+  }
+  element.style {
+    padding: 10px;
+}
+.commit-tease {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 0px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #586069;
+  background-color: #DC143C;
+  border:1px solid #DC143C;
+  border-radius: 20px;
+  border-bottom-right-radius:4px;
+  border-bottom-left-radius: 4px;
+}
+
+element.style {
+  color: #fff;
+  font-weight: bold;
+}
+.commit-tease-contributors {
+  padding: 5px 10px;
+  margin: 10px -10px -10px;
+  background-color: #fff;
+  border-top: 1px solid #e96998bd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.widthDiff{
+  margin-left: 1.3%;
+  flex: 0 0 14%;
+  color:#464a4c;
+  border: 1px solid #DED8D8;
+  border-radius: .25rem;
+  padding:4px 0;
+  width: 14.2%;
+}
+
+.form-control{
+  padding: 3px 3%;
+  font-size: 13px;
+  height: 24px;
+}
+
+.rightClass{
+  float:right;
+  margin: 8px 1% 0 0;
+}
+
+.rightClass button{
+  color: #fff;
+  text-decoration: none;
+}
+
+.clear{
+  clear:both;
+}
+td{
+  text-align: center;
+}
+th
+{
+    border: 1px solid #dddddd;
+    background-color: #DC143C;
+    color: white;
+}
+
+.fullList{
+  padding: 7px 1%;
+  font-size:13px;
+}
+.fullList .container{
+  width:1215px;
+}
+
+.btn-primary{
+  background-color: #8064A2;
+  border-color: #8064A2;
+  width: 20%;
+  padding: 2px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btnClass {
+  font-size: 14px;
+  width: 100%;
+  padding: 4px;
+}
+
+.fullList th{
+  text-align: center;
+    padding: 5px 0.8%;
+    vertical-align: middle;
+}
+
+input[type="date"]::-webkit-inner-spin-button{
+  display:none;
+}
+.container .row{
+  padding-top:6px;
+}
+/*input[type="date"]::-webkit-calendar-picker-indicator{
+  background-color: none;
+} */
+
+.modal-header
+{
+background-color:#DC143C;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+color:#fff;
+padding:0px 2%;
+} 
+.modal-header .close{
+  margin-top:2px;
+}
+
+.modal-footer
+{
+  padding:0px;
+  border-top:none;
+}
+
+.modal
+{
+  padding:85px;
+  
+}
+
+.btn btn-default{
+  padding: 2px;
+}
+
+
+.modal {
+  /* display: none;  Hidden by default 
+  position: fixed;  Stay in place 
+  z-index: 1;  Sit on top */
+ 
+ 
+  float: center;
+
+}
+.bankDts{
+  cursor: pointer;
+  margin: 0 0 0 1%;
+}
+.modal-backdrop {
+  z-index: 0 !important;
+}
+
+#bankbidPopup{
+  margin: 1px 0 0px 0px; 
+}
+
+#bankbidPopup .modal-header{
+  background-color: #fff;
+  border-bottom: none;
+  border-radius: 11px;
+}
+#bankbidPopup th{
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #dddddd;
+}
+/* Modal Content/Box */
+.modal-content {
+  
+ /* margin: 15% auto;  15% from the top and centered */
+
+  border: 1px solid #888;
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+#mdlpopup .modal-dialog{
+  width: 63%;
+}
+#mdlpopup .row{
+  margin-bottom: 10px;
+}
+.scrollmenu{
+  margin:0 auto 75px;
+  width:98%;
+  overflow:auto;
+  white-space: nowrap;
+  padding-left:0;
+}
+.fullList td a{
+  cursor: pointer;
+}
+.searchBtn{
+  text-align:center; padding:12px 0 5px 0 ;
+}
+table td input{
+  margin-right: 12%;
+}
+
+#selectanyPO .modal-header, #ROIPopoup .modal-header, #biddingOver .modal-header, #mailSuccess .modal-header{
+  background: #fff;
+  border-bottom: #fff;
+}
+
+#selectanyPO .modal-dialog, #ROIPopoup .modal-dialog, #biddingOver .modal-dialog, #mailSuccess .modal-dialog{
+  background: #fff;
+  border-bottom: #fff;
+  width:25%;
+}
+#biddingOver .modal-dialog{
+  width:34%;
+}
+#custPopup .modal-dialog{
+  width:45%;
+}
+#custPopup div p{
+  padding:20px 0 0;
+}
+#custPopup .modal-footer{
+  text-align: center;
+}
+#custPopup .modal-footer button{
+  width:26%;
+}
+.fullList span{
+  color:#fff; font-weight:bold;
+}
+.nghide
+{
+  display: none;
+}
+
+#custPopup .row{
+  margin-bottom: 10px;
+}
+
+#eventID .row{
+  margin-bottom: 10px;
+}
+
+#eventID th{
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}

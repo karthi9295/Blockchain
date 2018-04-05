@@ -1,0 +1,206 @@
+.bidding
+{
+    
+    text-align: center;
+    
+}
+
+th
+{
+    border: 1px solid #dddddd;
+    background-color: #d40c56;
+    color: white
+}
+td{
+  text-align: center;
+}
+legend {
+    padding: 0.2em 0.5em;
+    border:1px solid green;
+    color:green;
+    font-size:90%;
+    text-align:right;
+    }
+    element.style {
+      padding: 10px;
+  }
+  .commit-tease {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 0px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #586069;
+    background-color: #DC143C;
+    border: 1px solid #DC143C;
+    border-radius: 20px;
+    border-bottom-right-radius:4px;
+    border-bottom-left-radius: 4px;
+  }
+  
+  element.style {
+    color: #fff;
+    font-weight: bold;
+  }
+  .commit-tease-contributors {
+    padding: 6px 10px 11px;
+    margin: 10px -10px -10px;
+    background-color: #fff;
+    border-top: 1px solid #e96998bd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  
+  .widthDiff{
+    margin-left: 1.3%;
+    flex: 0 0 14%;
+    color:#464a4c;
+    border: 1px solid #DED8D8;
+    border-radius: .25rem;
+    padding:9px 0;
+    width: 14.2%;
+  }
+  
+  .form-control{
+    padding: 3px 3%;
+    font-size: 13px;
+    height: 24px;
+  }
+  
+  .rightClass{
+    float:right;
+    margin: 8px 1% 0 0;
+  }
+  
+  .rightClass button{
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .clear{
+    clear:both;
+  }
+
+
+  .btnalign{
+    text-align:center;
+    padding:6px 0 3px 0;
+    border-color: #8064A2;
+    
+  }
+
+  .fullList{
+    padding: 7px 1%;
+    font-size:13px;
+  }
+  .fullList .container{
+    width:1215px;
+  }
+  .btn-primary{
+    background-color: #8064A2;
+    border-color: #8064A2;
+    width: 20%;
+    padding: 2px 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .fullList th{
+    text-align: center;
+      padding: 5px 0.8%;
+      vertical-align: middle;
+  }
+  
+.btn-primary{
+  background-color: #8064A2;
+  border-color: #8064A2;
+  width: 20%;
+  padding: 2px 0;
+  font-size: 16px;
+}
+.modal-header
+{
+background-color:#DC143C;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+color:#fff;
+padding: 4px 1%;
+} 
+
+.modal-footer{
+  border-top:none;
+  margin-top:0;
+}
+
+.modal
+{
+  padding:85px;
+  
+}
+.submitCls{
+  width:25%;margin-left: 5%;margin-top: 6px;
+}
+.nghide
+{
+  display: none;
+}
+th
+{
+    border: 1px solid #dddddd;
+    background-color: #DC143C;
+    color: white
+}
+input[type="date"]::-webkit-inner-spin-button{
+  display:none;
+}
+
+.container .row{
+  padding-top:6px;
+}
+#ROIPopoup .modal-header, #selectanyPO .modal-header, #alreadySubmitted .modal-header{
+  background: #fff;
+  border-bottom: #fff;
+}
+#ROIPopoup .modal-dialog, #selectanyPO .modal-dialog{
+  width:25%;
+}
+#alreadySubmitted .modal-dialog{
+  width: 30%;
+}
+#finalPopup .modal-dialog{
+  width: 41%;
+}
+#finalPopup .modal-footer{
+  text-align: center;
+}
+#finalPopup .modal-footer button{
+  width:38%;
+}
+#finalPopup .modal-footer button.diffWidth{
+  width:43%;
+}
+#openTxtBox .modal-body{
+  text-align: center;
+}
+#openTxtBox textarea{
+  line-height: 13px;
+}
+#openTxtBox button{
+  margin: 7px 0 0 26%;
+}
+.fullList span{
+  color:#fff; font-weight:bold;
+}
+.bidd .saveBnk{
+  text-align:center;
+}
+.marqDiv{
+  margin-left:2%;
+  color:#1a1aff;
+}
+table td input{
+  margin-right: 12%;
+}
+.contractDiv{
+  text-align:center; padding:12px 0 5px 0;
+}

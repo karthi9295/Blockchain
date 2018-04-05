@@ -1,0 +1,301 @@
+<app-header></app-header>
+
+<div _ngcontent-c0="" class="fullList">
+    <div _ngcontent-c0="" class="commit-tease">
+        <span>Bidding Status</span>
+        <span _ngcontent-c0="" class="pull-right">
+        <!--        <input _ngcontent-c0="" class="btn-primary" data-target="#mdlCreateCase" data-toggle="modal" type="button" value="Create"> -->
+        </span>
+    <div _ngcontent-c0="" class="commit-tease-contributors">
+
+<!-- Container Starts -->
+<div class= "container">
+<div class="row">
+    <div class="col-md-2">
+      <label class="control-label">Customer Name </label> 
+      </div>
+  <div class="col-md-2">
+        <input (keyup)="search()" class="form-control" [(ngModel)]="filter.CustomerName" type="text" >
+  </div>
+  <div class="col-md-2">
+      <label class="control-label" >Po Date from</label> 
+      </div>
+  <div class="col-md-2">  
+      <input class="form-control" (change)="search()" [(ngModel)]="filter.PoDatefrom" [max]="today" type="date" >
+  </div>
+  <div class="col-md-2">
+      <label class="control-label" >Po Date To </label> 
+      </div>
+  <div class="col-md-2">
+      <input class="form-control" (change)="search()" [(ngModel)]="filter.PoDateTo" [max]="today" type="date" >
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <label class="control-label" >ItemCode</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control"  [(ngModel)]="filter.ItemCode" type="text">
+    </div>
+    <div class="col-md-2">
+        <label class="control-label" >Quantityfrom</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control" [(ngModel)]="filter.Quantityfrom" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" >
+    </div>
+    <div class="col-md-2">
+        <label class="control-label" >Quantity To</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control" [(ngModel)]="filter.QuantityTo" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  type="number">
+    </div>
+</div>  
+    
+<div class="row">
+    <div class="col-md-2">
+        <label class="control-label" >Po Number</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control" [(ngModel)]="filter.PoNumber" type="text">
+    </div>
+    <div class="col-md-2">
+        <label class="control-label" >Amount Range From</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control"  [(ngModel)]="filter.AmountRangeFrom" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  type="number">
+    </div>
+    <div class="col-md-2">
+        <label class="control-label" >Amount Range To</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control"  [(ngModel)]="filter.AmountRangeTo" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  type="number">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <label class="control-label" >Event ID</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control"  [(ngModel)]="filter.EventID" type="text">
+    </div>
+    <div class="col-md-2">
+        <label class="control-label" >Item Desc</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control" [(ngModel)]="filter.Item" type="text">
+    </div>
+    <div class="col-md-2">
+        <label class="control-label" >Sales Order</label> 
+    </div>
+    <div class="col-md-2">
+        <input (keyup)="search()" class="form-control" [(ngModel)]="filter.salesOrder" type="text">
+    </div>
+</div>
+
+<div class="col-md-12 searchBtn">
+    <input _ngcontent-c0="" class="btn btn-primary btn-lg" type="button" value="Search" (click)="search()">
+</div>
+</div>   
+<!-- container Close -->
+</div>
+</div>
+</div>
+
+<div class="fullList scrollmenu">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Event ID</th>
+                <th>Customer name</th>
+                <th>PO Number</th>
+                <th>Item Code</th>
+                <th>Item Description</th>
+                <th>Quantity </th>
+                <th>Amount</th>
+                <th>PO Date</th>
+                <th>Status</th>
+                <th>Financial Inst</th>
+                <th>Rate of Int</th>
+                <th>Accepted Del Date</th>
+                <th>Instal Date</th>
+                <th>Attachments</th>
+                <th>Customer Del Acceptance</th>
+                <th>Customer Instal Acceptance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lessor of searchDeatilsOriData; let i = index">
+                <td>
+                    <input type="radio" name="radiogroup" value="" (click)="selectedRad(i)">
+                </td>
+                <td><a (click)="viewDts()">{{lessor.eventID}}</a></td>
+                <td>{{lessor.customerName}}</td>
+                <td>{{lessor.pONumber}}</td>
+                <td>{{lessor.itemCode}}</td>
+                <td>{{lessor.itemDesc}}</td>
+                <td>{{lessor.quantity }}</td>
+                <td>{{lessor.amount}}</td>
+                <td>{{lessor.pODate}}</td>
+                <td>{{lessor.status}}</td>
+                <td>
+                   {{lessor.bank}}
+                </td>
+                <td>
+                    {{lessor.ROI}}
+                </td>
+                <td>{{lessor.Accepted_Del_Date}}</td>
+                <td>{{lessor.Instal_Date}}</td>
+                <td>{{lessor.Attachments}}</td>
+                <td>{{lessor.Customer_Del_Acceptance}}</td>
+                <td>{{lessor.Customer_instal_Acceptance}}</td>
+            </tr>
+        </tbody>
+    </table>
+        
+</div>
+
+<div class="modal fade" id="selectanyPO" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Please select anyone of the PO</p>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<div class="modal fade" id="eventID" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+                    <h4 class="modal-title">View Details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Event ID </label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.eventID" type="text" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Item Desc</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.itemDesc" type="text" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Customer Name </label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.customerName" type="text" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Quantity</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.quantity" type="text" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">PO Number</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.pONumber" type="text" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Amount</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.amount" type="text" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Sales Order</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled [(ngModel)]="selectrow.sOrder" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <!--<div class="modal fade" id="PONum" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal" type="button">×</button>
+                            <h4 class="modal-title">View Details</h4>
+                        </div>
+                        <div class="modal-body">
+                                <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="control-label">Event ID </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-control" disabled [(ngModel)]="selectrow.eventID" type="text" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="control-label">Item</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-control" disabled [(ngModel)]="selectrow.itemCode" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="control-label">Customer Name </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-control" disabled [(ngModel)]="selectrow.customerName" type="text" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="control-label">Quantity</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-control" disabled [(ngModel)]="selectrow.quantity" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-3">
+                                                <label class="control-label">PO Number</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" disabled [(ngModel)]="selectrow.pONumber" type="text" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="control-label">Amount</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" disabled [(ngModel)]="selectrow.amount" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-3">
+                                                    <label class="control-label">Sales Order</label>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input class="form-control" disabled [(ngModel)]="selectrow.sOrder" type="text" />
+                                                </div>
+                                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>-->
+
+<app-footer></app-footer>

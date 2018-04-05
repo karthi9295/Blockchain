@@ -1,0 +1,39 @@
+<!--
+
+-->
+<div id="loginPage">
+<app-header></app-header>
+
+<div class="loginpage">
+  <div class="loginStyle">
+  <form method="post" class="form-signin" (keyup.enter) ="login()">
+    <div style="width:35%; margin:0 0 18px 30%;">
+      <img style="width:100%;" src="./assets/Images/ricoh_1.jpeg"/>
+    </div>
+    <div class="form-label-group">
+      <input class="form-control" name="username" type="username" [(ngModel)] = "model.username" placeholder="Username" required autofocus>
+    </div>
+  
+    <div class="form-label-group" style="margin-top: 10px;">
+      <input class="form-control" name="password" type="password" [(ngModel)] = "model.password" placeholder="Password" required>
+     
+    </div>
+    <input class="btn btn-lg btn-primary btn-block" (click)="login()"  style="margin-top: 15px;" value="Sign in" type="button" />
+    <div class="clear"></div>
+    <div style="padding-top: 10px;">{{result}}</div>
+  </form>
+  </div>
+
+
+</div>
+
+<app-footer _ngcontent-c0="" _nghost-c4="">
+      
+  </app-footer>
+</div>
+  <!--
+  <app-footer _ngcontent-c0="" _nghost-c4="">
+      
+    </app-footer>
+
+  -->
